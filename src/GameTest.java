@@ -16,13 +16,15 @@ public class GameTest {
         }
     }
     void userInterface() {
-        System.out.println("What do you want to do?" +
-                "\nType help to get commands");
+        System.out.println("""
+
+                What do you want to do?
+                Type help to get commands""");
         String answer = scan.nextLine().toLowerCase();
 
         switch (answer) {
             case "help" -> ui.help();
-            case "exit" -> ui.exit();
+            case "exit" -> exit();
             case "look" -> look();
             case "north", "n", "go north" -> goNorth();
             case "south", "s", "go south" -> goSouth();
@@ -65,6 +67,10 @@ public class GameTest {
             System.out.println("Entering " + currentRoom.getName());
             look();
         } else ui.doesNotExist();
+    }
+    void exit(){
+        System.out.println("You exited the program");
+        gameOn = false;
     }
 }
 
