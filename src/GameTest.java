@@ -1,28 +1,20 @@
-import java.util.Scanner;
-
 public class GameTest {
     Room currentRoom;
     boolean gameOn = true;
     Map map = new Map();
     UserInterface ui = new UserInterface();
-    Scanner scan = new Scanner(System.in);
 
     void go() {
         map.gameSetup();
         currentRoom = map.getStartRoom();
         ui.intro();
         while(gameOn) {
-            userInterface();
+            moveCommands();
+            ui.userChoice();
         }
     }
-    void userInterface() {
-        System.out.println("""
-
-                What do you want to do?
-                Type help to get commands""");
-        String answer = scan.nextLine().toLowerCase();
-
-        switch (answer) {
+    void moveCommands() {
+        switch (ui.answer) {
             case "help" -> ui.help();
             case "exit" -> {
                 ui.exit();
@@ -72,4 +64,5 @@ public class GameTest {
         } else ui.doesNotExist();
     }
 }
+
 
