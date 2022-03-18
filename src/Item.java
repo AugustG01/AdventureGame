@@ -19,4 +19,7 @@ public class Item {
             }
         }
     }
+    public void addItem(String itemToBeAdded){
+        items.add(itemToBeAdded);
+    }
 }

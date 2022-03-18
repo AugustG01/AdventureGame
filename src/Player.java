@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Player {
     Room currentRoom;
     UserInterface ui = new UserInterface();
-    Item inventory;
+    Item inventory = new Item();
     Scanner scan = new Scanner(System.in);
 
     void takeItem() {
@@ -11,6 +11,15 @@ public class Player {
         currentRoom.removeItem(item);
         inventory.addItem(item);
         ui.displayInventory(item);
+    }
+    public void lookInInventory(){
+        System.out.println(inventory.getItems());
+    }
+    public void dropItem() {
+        String item = scan.nextLine();
+        currentRoom.item.addItem(item);
+        inventory.removeItems(item);
+        ui.droppedItem(item);
     }
     void look() {
         System.out.println(currentRoom.getListOfThings());
