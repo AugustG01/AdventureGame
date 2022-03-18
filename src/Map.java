@@ -44,6 +44,7 @@ public class Map {
         room9.setNorth(room6);
         room9.setWest(room8);
         room8.setNorth(room5);
+        room5.setSouth(room8);
         room8.setWest(room7);
         room8.setEast(room9);
         room7.setEast(room8);
