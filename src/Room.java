@@ -12,7 +12,6 @@ public class Room{
         this.listOfThings = listOfThings;
         this.name = name;
     }
-
     public void setNorth(Room north){
         this.north = north;
     }
