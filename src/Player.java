@@ -7,8 +7,10 @@ public class Player {
     Scanner scan = new Scanner(System.in);
 
     void takeItem() {
-        currentRoom.removeItem(scan.nextLine());
-        scan.nextLine();
+        String item = scan.nextLine();
+        currentRoom.removeItem(item);
+        inventory.addItem(item);
+        ui.displayInventory(item);
     }
     void look() {
         System.out.println(currentRoom.getListOfThings());

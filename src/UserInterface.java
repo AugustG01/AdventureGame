@@ -3,9 +3,6 @@ import java.util.Scanner;
 public class UserInterface {
     Scanner scan = new Scanner(System.in);
     public String answer;
-    public String itemToRemove;
-
-
 
     void intro() {
         String name;
@@ -13,7 +10,6 @@ public class UserInterface {
         name = scan.nextLine();
         System.out.println("Hi " + name + " ");
     }
-
 
     void help() {
         System.out.println("""
@@ -35,6 +31,15 @@ public class UserInterface {
     }
     public void takeChoice() {
         System.out.println("Type in the item you want to take?");
-        //itemToRemove = scan.nextLine();
+    }
+
+    public void displayInventory(String item) {
+        System.out.println("You have taken: "+ item);
+    }
+    public void droppedItem(String item){
+        System.out.println("You have dropped "+ item);
+    }
+    public void dropChoice() {
+        System.out.println("Type in the item you want to drop?");
     }
 }
