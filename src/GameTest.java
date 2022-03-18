@@ -6,6 +6,7 @@ public class GameTest {
     Map map = new Map();
     Player player = new Player();
     UserInterface ui = new UserInterface();
+    Room room = new Room();
 
     void go() {
         map.gameSetup();

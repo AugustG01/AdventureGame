@@ -13,16 +13,16 @@ public class Room{
         this.name = name;
     }
 
-    void setNorth(Room north){
+    public void setNorth(Room north){
         this.north = north;
     }
-    void setSouth(Room south){
+    public void setSouth(Room south){
         this.south = south;
     }
-    void setEast(Room east){
+    public void setEast(Room east){
         this.east = east;
     }
-    void setWest(Room west){
+    public void setWest(Room west){
         this.west = west;
     }
     String getListOfThings(){

@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class UserInterface {
     Scanner scan = new Scanner(System.in);
     public String answer;
+    public String itemToRemove;
 
 
 
@@ -22,17 +23,18 @@ public class UserInterface {
     }
     void playerChoice() {
         System.out.println("""
-
                 What do you want to do?
                 Type help to get commands""");
         answer = scan.nextLine().toLowerCase();
     }
-
     void doesNotExist(){
         System.out.println("There is no door in this direction");
-
     }
     void exit(){
         System.out.println("You exited the program");
+    }
+    public void takeChoice() {
+        System.out.println("Type in the item you want to take?");
+        //itemToRemove = scan.nextLine();
     }
 }

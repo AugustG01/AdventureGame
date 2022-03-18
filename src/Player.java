@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Player {
     Room currentRoom;
     UserInterface ui = new UserInterface();
