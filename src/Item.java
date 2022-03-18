@@ -13,6 +13,12 @@ public class Item {
         items.add(item2);
         items.add(item3);
     }
+    public void removeItems(String itemToBeRemoved) {
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).equalsIgnoreCase(itemToBeRemoved)){
+                items.remove(items.get(i));
 
-
+            }
+        }
+    }
 }

@@ -51,6 +51,9 @@ public class Map {
         room7.setNorth(room4);
         room4.setSouth(room7);
         room4.setNorth(room1);
+        room1.setItem("chair","corpse","axe");
+        room2.setItem("book", "lamp","");
+
 
         startRoom = room1;
     }

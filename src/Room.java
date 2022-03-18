@@ -43,10 +43,13 @@ public class Room{
     Room getWest() {
         return west;
     }
-    void setItem(String item){
-        this.item.setItems(item);
+    public void setItem(String item1, String item2, String item3){
+        this.item.setItems(item1, item2, item3);
     }
     Item getItem(){
         return item;
+    }
+    public void removeItem(String item){
+        this.item.removeItems(item);
     }
 }

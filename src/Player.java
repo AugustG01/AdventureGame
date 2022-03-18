@@ -2,7 +2,12 @@ public class Player {
     Room currentRoom;
     UserInterface ui = new UserInterface();
     Item inventory;
+    Scanner scan = new Scanner(System.in);
 
+    void takeItem() {
+        currentRoom.removeItem(scan.nextLine());
+        scan.nextLine();
+    }
     void look() {
         System.out.println(currentRoom.getListOfThings());
     }
