@@ -20,20 +20,19 @@ public class UserInterface {
                 Type "look" to look at your surroundings
                 Type "Exit" to exit the game""");
     }
-
-
-    void doesNotExist(){
-        System.out.println("There is no door in this direction");
-    }
-
-    void userChoice() {
+    void playerChoice() {
         System.out.println("""
 
                 What do you want to do?
                 Type help to get commands""");
         answer = scan.nextLine().toLowerCase();
     }
-        void exit(){
+
+    void doesNotExist(){
+        System.out.println("There is no door in this direction");
+
+    }
+    void exit(){
         System.out.println("You exited the program");
     }
 }
