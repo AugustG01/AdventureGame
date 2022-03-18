@@ -6,6 +6,7 @@ public class Room{
     private Room west;
     private String name;
     private String listOfThings;
+    Item item = new Item();
 
     Room(){}
     Room(String name, String listOfThings){
@@ -42,5 +43,11 @@ public class Room{
     }
     Room getWest() {
         return west;
+    }
+    void setItem(String item){
+        this.item.setItems(item);
+    }
+    Item getItem(){
+        return item;
     }
 }

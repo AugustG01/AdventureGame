@@ -1,12 +1,9 @@
-import java.util.Scanner;
-
 public class GameTest {
 
     boolean gameOn = true;
     Map map = new Map();
     Player player = new Player();
     UserInterface ui = new UserInterface();
-    Scanner scan = new Scanner(System.in);
 
     void go() {
         map.gameSetup();
