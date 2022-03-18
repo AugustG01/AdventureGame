@@ -1,4 +1,3 @@
-
 public class Room{
     private Room north;
     private Room south;
