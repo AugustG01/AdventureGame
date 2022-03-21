@@ -52,7 +52,14 @@ public class Map {
         room4.setSouth(room7);
         room4.setNorth(room1);
         room1.setItem("chair","corpse","axe");
-        room2.setItem("book", "lamp","");
+        room2.setItem("book", "lamp","candy bar");
+        room3.setItem("bear head","water bottle","knife");
+        room4.setItem("glass shard","rope","washing powder");
+        room5.setItem("chest full of money","big ass sword","burger king crown");
+        room6.setItem("tv-remote","small spoon","flashlight");
+        room7.setItem("keys","pillow","bloody towel");
+        room8.setItem("fork","nun chucks","fire extinguisher");
+        room9.setItem("pills","svubber","axe deodorant");
 
 
 
