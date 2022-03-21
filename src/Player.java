@@ -40,6 +40,7 @@ public class Player {
             look();
         } else ui.doesNotExist();
     }
+
     void goEast(){
         if(currentRoom.getEast() != null) {
             currentRoom = currentRoom.getEast();

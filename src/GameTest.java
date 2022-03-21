@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class GameTest {
 
     boolean gameOn = true;
@@ -28,6 +26,7 @@ public class GameTest {
             case "south", "s", "go south" -> player.goSouth();
             case "east", "e", "go east" -> player.goEast();
             case "west", "w", "go west" -> player.goWest();
+
         }
     }
 }

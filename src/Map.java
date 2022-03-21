@@ -55,6 +55,7 @@ public class Map {
         room2.setItem("book", "lamp","");
 
 
+
         startRoom = room1;
     }
     Room getStartRoom(){

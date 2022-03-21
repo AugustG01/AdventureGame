@@ -50,5 +50,6 @@ public class Room{
     }
     public void removeItem(String item){
         this.item.removeItems(item);
+
     }
 }

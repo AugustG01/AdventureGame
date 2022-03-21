@@ -15,7 +15,6 @@ public class Item {
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i).equalsIgnoreCase(itemToBeRemoved)){
                 items.remove(items.get(i));
-
             }
         }
     }
