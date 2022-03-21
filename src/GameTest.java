@@ -27,6 +27,7 @@ public class GameTest {
             case "east", "e", "go east" -> player.goEast();
             case "west", "w", "go west" -> player.goWest();
 
+
         }
     }
 }
