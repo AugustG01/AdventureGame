@@ -28,7 +28,6 @@ public class Player {
     }
     void look() {
         System.out.println(currentRoom.getListOfThings());
-        System.out.println(currentRoom.getItems());
     }
     void goNorth(){
         if(currentRoom.getNorth() != null) {
@@ -76,3 +75,4 @@ public class Player {
         inventory.add(itemToBeAdded);
     }
 }
+
