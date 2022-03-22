@@ -8,36 +8,48 @@ public class UserInterface {
         String name;
         System.out.print("What is your name? ");
         name = scan.nextLine();
-        System.out.println("Hi " + name + " ");
+        System.out.println("Hi " + name + " and welcome to the");
+        System.out.println(ColorClass.RED + " ('-. .-.   ('-.                      .-') _  .-') _     ('-.  _ .-') _         ('-. .-.                            .-')      ('-.   \n" +
+                "( OO )  /  ( OO ).-.                 ( OO ) )(  OO) )  _(  OO)( (  OO) )       ( OO )  /                           ( OO ).  _(  OO)  \n" +
+                ",--. ,--.  / . --. / ,--. ,--.   ,--./ ,--,' /     '._(,------.\\     .'_       ,--. ,--. .-'),-----.  ,--. ,--.   (_)---\\_)(,------. \n" +
+                "|  | |  |  | \\-.  \\  |  | |  |   |   \\ |  |\\ |'--...__)|  .---',`'--..._)      |  | |  |( OO'  .-.  ' |  | |  |   /    _ |  |  .---' \n" +
+                "|   .|  |.-'-'  |  | |  | | .-') |    \\|  | )'--.  .--'|  |    |  |  \\  '      |   .|  |/   |  | |  | |  | | .-') \\  :` `.  |  |     \n" +
+                "|       | \\| |_.'  | |  |_|( OO )|  .     |/    |  |  (|  '--. |  |   ' |      |       |\\_) |  |\\|  | |  |_|( OO ) '..`''.)(|  '--.  \n" +
+                "|  .-.  |  |  .-.  | |  | | `-' /|  |\\    |     |  |   |  .--' |  |   / :      |  .-.  |  \\ |  | |  | |  | | `-' /.-._)   \\ |  .--'  \n" +
+                "|  | |  |  |  | |  |('  '-'(_.-' |  | \\   |     |  |   |  `---.|  '--'  /      |  | |  |   `'  '-'  '('  '-'(_.-' \\       / |  `---. \n" +
+                "`--' `--'  `--' `--'  `-----'    `--'  `--'     `--'   `------'`-------'       `--' `--'     `-----'   `-----'     `-----'  `------' " + ColorClass.RESET);
     }
 
     void help() {
-        System.out.println("""
+        System.out.println(ColorClass.CYAN + """
                 Type "Go north/south/east/west" to go that way
                 Type "look" to look at your surroundings
-                Type "Exit" to exit the game""");
+                Type "Exit" to exit the game
+                """ + ColorClass.RESET);
     }
     void playerChoice() {
         System.out.println("""
+                
                 What do you want to do?
-                Type help to get commands""");
+                Type help to get commands
+                """);
         answer = scan.nextLine().toLowerCase();
     }
     void doesNotExist(){
-        System.out.println("There is no door in this direction");
+        System.out.println(ColorClass.ORANGE + "There is no door in this direction" + ColorClass.RESET);
     }
     void exit(){
-        System.out.println("You exited the program");
+        System.out.println(ColorClass.ORANGE + "You exited the program" + ColorClass.RESET);
     }
     public void takeChoice() {
         System.out.println("Type in the item you want to take?");
     }
 
     public void displayInventory(String item) {
-        System.out.println("You have taken: "+ item);
+        System.out.println("You have taken: " + ColorClass.GREEN + item + ColorClass.RESET);
     }
     public void droppedItem(String item){
-        System.out.println("You have dropped "+ item);
+        System.out.println("You have dropped " + ColorClass.RED + item + ColorClass.RESET);
     }
     public void dropChoice() {
         System.out.println("Type in the item you want to drop?");
