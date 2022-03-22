@@ -41,6 +41,5 @@ public class UserInterface {
     }
     public void dropChoice() {
         System.out.println("Type in the item you want to drop?");
-
     }
 }

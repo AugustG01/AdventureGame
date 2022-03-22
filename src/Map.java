@@ -1,5 +1,11 @@
 public class Map {
     Room startRoom = new Room();
+    Item axe = new Item("axe");
+    Item corpse = new Item("corpse");
+    Item chair = new Item("chair");
+    Item anvil = new Item("anvil");
+    Item lamp = new Item("lamp");
+    Item cheeseGrater = new Item("cheese grater");
 
     void gameSetup(){
         Room room1 = new Room("The Field", """
@@ -51,10 +57,8 @@ public class Map {
         room7.setNorth(room4);
         room4.setSouth(room7);
         room4.setNorth(room1);
-        room1.setItem("chair","corpse","axe");
-        room2.setItem("book", "lamp","");
-
-
+        room1.setItem(axe, chair, lamp);
+        room2.setItem(cheeseGrater, anvil, corpse);
 
         startRoom = room1;
     }

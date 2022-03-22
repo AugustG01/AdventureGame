@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Room{
     private Room north;
     private Room south;
@@ -5,7 +7,8 @@ public class Room{
     private Room west;
     private String name;
     private String listOfThings;
-    Item item = new Item();
+    //Item item = new Item();
+    ArrayList<Item> items = new ArrayList<>();
 
     Room(){}
     Room(String name, String listOfThings){
@@ -42,14 +45,24 @@ public class Room{
     Room getWest() {
         return west;
     }
-    public void setItem(String item1, String item2, String item3){
-        this.item.setItems(item1, item2, item3);
+    public void setItem(Item item1, Item item2, Item item3){
+        items.add(item1);
+        items.add(item2);
+        items.add(item3);
     }
-    Item getItem(){
-        return item;
+    ArrayList<Item> getItems(){
+        return items;
     }
-    public void removeItem(String item){
-        this.item.removeItems(item);
-
+    public Item removeItems(String itemToBeRemoved) {
+        for (int i = 0; i < items.size(); i++) {
+            Item tmp = items.get(i);
+            if (items.get(i).getDescription().equalsIgnoreCase(itemToBeRemoved)){
+                items.remove(items.get(i));
+                return tmp;
+            }
+        } return null;
+    }
+    public void addItem(Item itemToBeAdded){
+        items.add(itemToBeAdded);
     }
 }

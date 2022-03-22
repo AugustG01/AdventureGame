@@ -1,28 +1,34 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Player {
     Room currentRoom;
     UserInterface ui = new UserInterface();
-    Item inventory = new Item();
+    Item itm = new Item("hovsa");
+    ArrayList<Item> inventory = new ArrayList<>();
     Scanner scan = new Scanner(System.in);
 
     void takeItem() {
         String item = scan.nextLine();
-        currentRoom.removeItem(item);
-        inventory.addItem(item);
-        ui.displayInventory(item);
+        Item itemToAdd = currentRoom.removeItems(item);
+        if(itemToAdd != null) {
+            addItem(itemToAdd);
+            ui.displayInventory(itemToAdd.getDescription());
+        }
     }
     public void lookInInventory(){
-        System.out.println(inventory.getItems());
+        System.out.println(itm.getItems());
     }
     public void dropItem() {
         String item = scan.nextLine();
-        currentRoom.item.addItem(item);
-        inventory.removeItems(item);
+        Item itemToDrop = removeItems(item);
+        currentRoom.addItem(itemToDrop);
+        removeItems(item);
         ui.droppedItem(item);
     }
     void look() {
         System.out.println(currentRoom.getListOfThings());
+        System.out.println(currentRoom.getItems());
     }
     void goNorth(){
         if(currentRoom.getNorth() != null) {
@@ -56,5 +62,17 @@ public class Player {
             System.out.println("Entering " + currentRoom.getName());
             look();
         } else ui.doesNotExist();
+    }
+    public Item removeItems(String itemToBeRemoved) {
+        for (int i = 0; i < inventory.size(); i++) {
+            Item tmp = inventory.get(i);
+            if (inventory.get(i).getDescription().equalsIgnoreCase(itemToBeRemoved)){
+                inventory.remove(inventory.get(i));
+                return tmp;
+            }
+        } return null;
+    }
+    public void addItem(Item itemToBeAdded){
+        inventory.add(itemToBeAdded);
     }
 }
