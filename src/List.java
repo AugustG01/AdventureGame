@@ -20,15 +20,13 @@ public class List {
         itemList.add(item2);
         itemList.add(item3);
     }
-    ArrayList<Item> getItems(){
-        return itemList;
-    }
+
     StringBuilder printList(){
         StringBuilder sb = new StringBuilder();
         for (Item item : itemList) {
             sb.append(item.getDescription());
+            sb.append(" ");
         }
         return sb;
     }
-
 }
