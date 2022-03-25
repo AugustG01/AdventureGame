@@ -22,17 +22,18 @@ public class UserInterface {
 
     void help() {
         System.out.println(ColorClass.CYAN + """
-                Type "Go north/south/east/west" to go that way
+                Type "go north/south/east/west" to go that way
                 Type "look" to look at your surroundings
-                Type "Exit" to exit the game
-                """ + ColorClass.RESET);
+                type "i" or "inventory" to look at your inventory
+                Type "take" to pickup an item in the room
+                Type "drop" to drop an item from your inventory
+                Type "exit" to exit the game""" + ColorClass.RESET);
     }
     void playerChoice() {
         System.out.println("""
                 
                 What do you want to do?
-                Type help to get commands
-                """);
+                Type help to get commands""");
         answer = scan.nextLine().toLowerCase();
     }
     void doesNotExist(){

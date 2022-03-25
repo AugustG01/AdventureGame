@@ -6,6 +6,12 @@ public class Map {
     Item anvil = new Item("anvil");
     Item lamp = new Item("lamp");
     Item cheeseGrater = new Item("cheese grater");
+    Item knife = new Item("knife");
+    Item candle = new Item("candle");
+    Item rottenBeef = new Item("rotten beef");
+
+
+
 
     void gameSetup(){
         Room room1 = new Room("The Field", """
@@ -59,6 +65,7 @@ public class Map {
         room4.setNorth(room1);
         room1.items.setItem(chair, lamp, axe);
         room2.items.setItem(cheeseGrater, anvil, corpse);
+        room3.items.setItem(knife, candle, rottenBeef);
 
         startRoom = room1;
     }

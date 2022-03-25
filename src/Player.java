@@ -15,7 +15,8 @@ public class Player {
         }
     }
     public void lookInInventory(){
-        System.out.println(inventory.printList());
+
+        System.out.println("\nYou have " + inventory.printList() + " in your inventory");
     }
     public void dropItem() {
         String item = scan.nextLine();
@@ -26,7 +27,7 @@ public class Player {
     }
     void look() {
         System.out.println(currentRoom.getListOfThings());
-        System.out.println(currentRoom.items.printList());
+        System.out.println("\nThere are some items in the room: " + currentRoom.items.printList());
 
     }
     void goNorth(){
