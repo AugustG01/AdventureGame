@@ -34,7 +34,7 @@ public class List {
         StringBuilder sb = new StringBuilder();
         for (Item item : itemList) {
             sb.append(item.getDescription());
-            sb.append(", ");
+            sb.append("\n");
         }
         return sb;
     }
