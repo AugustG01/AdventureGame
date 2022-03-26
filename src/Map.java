@@ -63,9 +63,9 @@ public class Map {
         room7.setNorth(room4);
         room4.setSouth(room7);
         room4.setNorth(room1);
-        room1.items.setItem(chair, lamp, axe);
-        room2.items.setItem(cheeseGrater, anvil, corpse);
-        room3.items.setItem(knife, candle, rottenBeef);
+        room1.itemsInRoom.setItem(chair, lamp, axe);
+        room2.itemsInRoom.setItem(cheeseGrater, anvil, corpse);
+        room3.itemsInRoom.setItem(knife, candle, rottenBeef);
 
         startRoom = room1;
     }

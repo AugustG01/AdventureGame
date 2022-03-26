@@ -1,19 +1,16 @@
-import java.util.ArrayList;
-
 public class Room{
     private Room north;
     private Room south;
     private Room east;
     private Room west;
     private String name;
-    private String listOfThings;
-    //Item item = new Item();
-    //ArrayList<Item> items = new ArrayList<>();
-    List items = new List();
+    private String roomDescription;
+
+    List itemsInRoom = new List();
 
     Room(){}
     Room(String name, String listOfThings){
-        this.listOfThings = listOfThings;
+        this.roomDescription = listOfThings;
         this.name = name;
     }
     public void setNorth(Room north){
@@ -28,8 +25,8 @@ public class Room{
     public void setWest(Room west){
         this.west = west;
     }
-    String getListOfThings(){
-        return listOfThings;
+    String getRoomDescription(){
+        return roomDescription;
     }
     String getName(){
         return name;

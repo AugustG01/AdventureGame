@@ -15,6 +15,15 @@ public class List {
     public void addItem(Item itemToBeAdded){
         itemList.add(itemToBeAdded);
     }
+    public void setItem(){
+        setItem(null);
+    }
+    public void setItem(Item item1){
+        setItem(item1, null);
+    }
+    public void setItem(Item item1, Item item2){
+        setItem(item1, item2, null);
+    }
     public void setItem(Item item1, Item item2, Item item3){
         itemList.add(item1);
         itemList.add(item2);

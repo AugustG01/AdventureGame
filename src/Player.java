@@ -8,7 +8,7 @@ public class Player {
 
     void takeItem() {
         String item = scan.nextLine();
-        Item itemToAdd = currentRoom.items.removeItems(item);
+        Item itemToAdd = currentRoom.itemsInRoom.removeItems(item);
         if(itemToAdd != null) {
             inventory.addItem(itemToAdd);
             ui.displayInventory(itemToAdd.getDescription());
@@ -21,13 +21,13 @@ public class Player {
     public void dropItem() {
         String item = scan.nextLine();
         Item itemToDrop = inventory.removeItems(item);
-        currentRoom.items.addItem(itemToDrop);
+        currentRoom.itemsInRoom.addItem(itemToDrop);
         inventory.removeItems(item);
         ui.droppedItem(item);
     }
     void look() {
-        System.out.println(currentRoom.getListOfThings());
-        System.out.println("\nThere are some items in the room: " + currentRoom.items.printList());
+        System.out.println(currentRoom.getRoomDescription());
+        System.out.println("\nThere are some items in the room: " + currentRoom.itemsInRoom.printList());
 
     }
     void goNorth(){
