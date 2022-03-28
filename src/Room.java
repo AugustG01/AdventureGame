@@ -43,6 +43,4 @@ public class Room{
     Room getWest() {
         return west;
     }
-
-
 }

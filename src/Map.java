@@ -8,7 +8,8 @@ public class Map {
     Item cheeseGrater = new Item("cheese grater");
     Item knife = new Item("knife");
     Item candle = new Item("candle");
-    Item rottenBeef = new Item("rotten beef");
+    Item rottenBeef = new Food("rotten beef", -25);
+    Item apple = new Food("apple", 25);
 
 
 

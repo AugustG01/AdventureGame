@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class UserInterface {
     Scanner scan = new Scanner(System.in);
-    public String answer;
+    String answer;
 
-    void intro() {
+    public void intro() {
         String name;
         System.out.print("What is your name? ");
         name = scan.nextLine();
@@ -20,7 +20,7 @@ public class UserInterface {
                 "`--' `--'  `--' `--'  `-----'    `--'  `--'     `--'   `------'`-------'       `--' `--'     `-----'   `-----'     `-----'  `------' " + ColorClass.RESET);
     }
 
-    void help() {
+    public void help() {
         System.out.println(ColorClass.CYAN + """
                 Type "go north/south/east/west" to go that way
                 Type "look" to look at your surroundings
@@ -29,21 +29,24 @@ public class UserInterface {
                 Type "drop" to drop an item from your inventory
                 Type "exit" to exit the game""" + ColorClass.RESET);
     }
-    void playerChoice() {
+    public void playerChoice() {
         System.out.println("""
                 
                 What do you want to do?
                 Type help to get commands""");
         answer = scan.nextLine().toLowerCase();
     }
-    void doesNotExist(){
+    public void doesNotExist(){
         System.out.println(ColorClass.ORANGE + "There is no door in this direction" + ColorClass.RESET);
     }
-    void exit(){
+    public void exit(){
         System.out.println(ColorClass.ORANGE + "You exited the program" + ColorClass.RESET);
     }
     public void takeChoice() {
         System.out.println("Type in the item you want to take?");
+    }
+    public void eatChoice(){
+        System.out.println("Type in the item you would like to eat?");
     }
 
     public void displayInventory(String item) {

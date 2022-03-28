@@ -31,6 +31,8 @@ public class GameTest {
                 ui.dropChoice();
                 player.dropItem();
             }
+            case "health" -> player.displayHealth();
+            case "eat", "namme nam" -> player.eat();
             case "north", "n", "go north" -> player.goNorth();
             case "south", "s", "go south" -> player.goSouth();
             case "east", "e", "go east" -> player.goEast();
