@@ -1,6 +1,6 @@
 public class GameTest {
 
-    boolean gameOn = true;
+    public static boolean gameOn = true;
     Map map = new Map();
     Player player = new Player();
     UserInterface ui = new UserInterface();

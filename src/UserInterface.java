@@ -27,7 +27,9 @@ public class UserInterface {
                 type "i" or "inventory" to look at your inventory
                 Type "take" to pickup an item in the room
                 Type "drop" to drop an item from your inventory
-                Type "exit" to exit the game""" + ColorClass.RESET);
+                Type "exit" to exit the game
+                Type "attack" to attack the enemy
+                Type "equip" to equip a weapon""" + ColorClass.RESET);
     }
     public void playerChoice() {
         System.out.println("""
