@@ -48,6 +48,9 @@ public class UserInterface {
     public void eatChoice(){
         System.out.println("Type in the item you would like to eat?");
     }
+    public void noItemFound(){
+        System.out.println("No item found in room or inventory");
+    }
 
     public void displayInventory(String item) {
         System.out.println("You have taken: " + ColorClass.GREEN + item + ColorClass.RESET);
