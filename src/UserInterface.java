@@ -49,7 +49,10 @@ public class UserInterface {
         System.out.println("Type in the item you would like to eat?");
     }
     public void noItemFound(){
-        System.out.println("No item found in room or inventory");
+        System.out.println("No item found");
+    }
+    public void equipChoice(){
+        System.out.println("What item would you like to equip?");
     }
 
     public void displayInventory(String item) {

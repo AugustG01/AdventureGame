@@ -6,7 +6,7 @@ public class Map {
     Item anvil = new Item("anvil");
     Item lamp = new Item("lamp");
     Item cheeseGrater = new Item("cheese grater");
-    Item knife = new Item("knife");
+    Item knife = new MeleeWeapon("knife", 5);
     Item candle = new Item("candle");
     Item rottenBeef = new Food("rotten beef", -25);
     Item apple = new Food("apple", 25);

@@ -5,9 +5,7 @@ public class Food extends Item{
     Food(String description, int healthPoints){
         super(description);
         setHealthPoints(healthPoints);
-
     }
-
     public void setHealthPoints(int healthPoints){
         this.healthPoints = healthPoints;
     }

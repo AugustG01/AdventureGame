@@ -36,6 +36,7 @@ public class GameTest {
                 ui.eatChoice();
                 player.eat();
             }
+            case "equip" -> player.equip();
             case "north", "n", "go north" -> player.goNorth();
             case "south", "s", "go south" -> player.goSouth();
             case "east", "e", "go east" -> player.goEast();
