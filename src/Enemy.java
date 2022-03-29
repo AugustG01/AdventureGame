@@ -17,12 +17,6 @@ public class Enemy {
         System.out.println("You hit " + name + " and did " + damage + " damage to him");
         System.out.println(name + " now has " + health + " HP");
 
-
-
-
-
-        System.out.println(damage);
-        System.out.println(health);
     }
 
     public int attack() {
