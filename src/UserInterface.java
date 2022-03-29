@@ -31,38 +31,47 @@ public class UserInterface {
                 Type "attack" to attack the enemy
                 Type "equip" to equip a weapon""" + ColorClass.RESET);
     }
+
     public void playerChoice() {
         System.out.println("""
-                
+                                
                 What do you want to do?
                 Type help to get commands""");
         answer = scan.nextLine().toLowerCase();
     }
-    public void doesNotExist(){
+
+    public void doesNotExist() {
         System.out.println(ColorClass.ORANGE + "There is no door in this direction" + ColorClass.RESET);
     }
-    public void exit(){
+
+    public void exit() {
         System.out.println(ColorClass.ORANGE + "You exited the program" + ColorClass.RESET);
     }
+
     public void takeChoice() {
         System.out.println("Type in the item you want to take?");
     }
-    public void eatChoice(){
+
+    public void eatChoice() {
         System.out.println("Type in the item you would like to eat?");
     }
-    public void noItemFound(){
+
+    public void noItemFound() {
         System.out.println("No item found");
     }
-    public void equipChoice(){
+
+    public void equipChoice() {
         System.out.println("What item would you like to equip?");
     }
 
     public void displayInventory(String item) {
         System.out.println("You have taken: " + ColorClass.GREEN + item + ColorClass.RESET);
     }
-    public void droppedItem(String item){
+
+    public void droppedItem(String item) {
         System.out.println("You have dropped " + ColorClass.RED + item + ColorClass.RESET);
     }
+
     public void dropChoice() {
         System.out.println("Type in the item you want to drop?");
     }

@@ -40,6 +40,13 @@ public class Player {
     void look() {
         System.out.println(currentRoom.getRoomDescription());
         System.out.println("\nThere are some items in the room: \n" + currentRoom.itemsInRoom.printList());
+        if (currentRoom.getEnemy() != null) {
+            System.out.println("A creature is approaching. Be careful!");
+            System.out.println(currentRoom.getEnemy().getName() + ", "
+                    + currentRoom.getEnemy().getDescription()
+                    + ". HP: " + currentRoom.getEnemy().getHealth());
+        }
+
 
     }
 

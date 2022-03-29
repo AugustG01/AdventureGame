@@ -8,12 +8,33 @@ public class Map {
     Item cheeseGrater = new Item("cheese grater");
     Item knife = new MeleeWeapon("knife", 5);
     Item candle = new Item("candle");
+
+
+
+
+
+    // create weapons
+    // melee
+    Item axe = new MeleeWeapon("axe", 10, 10, 10);
+    Item knife = new MeleeWeapon("knife", 5, 10, 10);
+
+    //ranged
+    Item bow = new RangedWeapon("bow", 3, 5, 5);
+    Item throwDagger = new RangedWeapon("Throwing Dagger", 2, 5, 5);
+
+
+    // create food
+    //unhealthy
     Item rottenBeef = new Food("rotten beef", -25);
+
+    //healthy
     Item apple = new Food("apple", 25);
 
 
+    // create enemies
+    Enemy dummy = new Enemy("john", "dangerous", knife, 50);
 
-
+    // create descriptions
     void gameSetup(){
         Room room1 = new Room("The Field", """
                 You stand in front of a decaying house, and spot two doors""");
