@@ -1,12 +1,14 @@
 public class Map {
     Room startRoom = new Room();
-    Item axe = new Item("axe");
+
+    //create Items
+
     Item corpse = new Item("corpse");
     Item chair = new Item("chair");
     Item anvil = new Item("anvil");
     Item lamp = new Item("lamp");
     Item cheeseGrater = new Item("cheese grater");
-    Item knife = new MeleeWeapon("knife", 5);
+
     Item candle = new Item("candle");
 
 
@@ -37,7 +39,7 @@ public class Map {
     // create descriptions
     void gameSetup(){
         Room room1 = new Room("The Field", """
-                You stand in front of a decaying house, and spot two doors""");
+                You stand in front of a decaying house, and spot two doors.""");
         Room room2 = new Room("Main Entrance","""
             You entered the main entrance, there is broken glass all over the ground,
             among the shattered glass, are broken picture frames""");
@@ -67,6 +69,7 @@ public class Map {
                 It's very cold since a small window is broken and banging against the outside bricks.
                 You see the medicine closet is slightly open.""");
 
+        // create map
         room1.setEast(room2);
         room1.setSouth(room4);
         room2.setEast(room3);
@@ -85,9 +88,18 @@ public class Map {
         room7.setNorth(room4);
         room4.setSouth(room7);
         room4.setNorth(room1);
-        room1.itemsInRoom.setItem(chair, lamp, axe);
-        room2.itemsInRoom.setItem(cheeseGrater, anvil, corpse);
-        room3.itemsInRoom.setItem(knife, candle, rottenBeef);
+
+        // place items in map
+        room1.itemsInRoom.setItem(chair, axe, rottenBeef);
+        room2.itemsInRoom.setItem(cheeseGrater, axe);
+        room3.itemsInRoom.setItem(knife, lamp, apple);
+        room4.itemsInRoom.setItem(bow, candle, throwDagger);
+        room5.itemsInRoom.setItem(anvil, corpse);
+
+        // place enemies
+        room1.setEnemy(dummy);
+        room2.setEnemy(dummy);
+
 
         startRoom = room1;
     }
