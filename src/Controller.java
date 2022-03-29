@@ -37,7 +37,7 @@ public class GameTest {
                 player.eat();
             }
             case "equip" -> player.equip();
-            case "attack" -> player.attack();
+            case "attack", "a" -> player.attack();
             case "north", "n", "go north" -> player.goNorth();
             case "south", "s", "go south" -> player.goSouth();
             case "east", "e", "go east" -> player.goEast();

@@ -36,7 +36,7 @@ public class Player {
             System.out.println("no such item exists");
         }
     }
-    //prints out the items in the currentroom
+    //prints out the items in the currentRoom
     void look() {
         System.out.println(currentRoom.getRoomDescription());
         System.out.println("\nThere are some items in the room: \n" + currentRoom.itemsInRoom.printList());
