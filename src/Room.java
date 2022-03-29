@@ -5,6 +5,7 @@ public class Room{
     private Room west;
     private String name;
     private String roomDescription;
+    private Enemy enemy;
 
     List itemsInRoom = new List();
 
