@@ -18,7 +18,7 @@ public class Map {
     // create weapons
     // melee
     Item axe = new MeleeWeapon("axe", 10, 10, 10);
-    Item knife = new MeleeWeapon("knife", 5, 10, 10);
+    Item knife = new MeleeWeapon("knife", 5, 10, 100);
 
     //ranged
     Item bow = new RangedWeapon("bow", 3, 5, 5);
@@ -34,7 +34,7 @@ public class Map {
 
 
     // create enemies
-    Enemy dummy = new Enemy("john", "dangerous", knife, 50);
+    Enemy dummy = new Enemy("john", "dangerous", knife, 500);
 
     // create descriptions
     void gameSetup(){
