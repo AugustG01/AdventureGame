@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class List {
     ArrayList<Item> itemList = new ArrayList<>();
 
+    // removes item from list and returns that item
     public Item removeItems(String itemToBeRemoved) {
         for (int i = 0; i < itemList.size(); i++) {
             Item tmp = itemList.get(i);
@@ -15,9 +16,7 @@ public class List {
     public void addItem(Item itemToBeAdded){
         itemList.add(itemToBeAdded);
     }
-    public void setItem(){
-        setItem(null);
-    }
+
     public void setItem(Item item1){
         setItem(item1, null);
     }

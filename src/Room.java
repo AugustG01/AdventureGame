@@ -43,4 +43,10 @@ public class Room{
     Room getWest() {
         return west;
     }
+    public void setEnemy(Enemy enemy){
+        this.enemy = enemy;
+    }
+    public Enemy getEnemy(){
+        return enemy;
+    }
 }

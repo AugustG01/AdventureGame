@@ -2,7 +2,7 @@ public class GameTest {
 
     public static boolean gameOn = true;
     Map map = new Map();
-    Player player = new Player();
+    Player player = new Player(100);
     UserInterface ui = new UserInterface();
 
     void go() {
@@ -27,7 +27,7 @@ public class GameTest {
                 player.takeItem();
             }
             case "inventory","i" -> player.lookInInventory();
-            case "drop","d" -> {
+            case "drop" -> {
                 ui.dropChoice();
                 player.dropItem();
             }
@@ -37,6 +37,7 @@ public class GameTest {
                 player.eat();
             }
             case "equip" -> player.equip();
+            case "attack" -> player.attack();
             case "north", "n", "go north" -> player.goNorth();
             case "south", "s", "go south" -> player.goSouth();
             case "east", "e", "go east" -> player.goEast();
