@@ -20,6 +20,13 @@ public class UserInterface {
                 "`--' `--'  `--' `--'  `-----'    `--'  `--'     `--'   `------'`-------'       `--' `--'     `-----'   `-----'     `-----'  `------' " + ColorClass.RESET);
     }
 
+    public void newHealth(int healthPoints, int health) {
+        if (healthPoints < 0) {
+            System.out.println("You ate POISON!. Your HP is reduced to " + health);
+        } else
+            System.out.println("You increased you health by " + healthPoints + " Your HP is now " + health);
+    }
+
     public void help() {
         System.out.println(ColorClass.CYAN + """
                 Type "go north/south/east/west" to go that way
@@ -75,4 +82,21 @@ public class UserInterface {
     public void dropChoice() {
         System.out.println("Type in the item you want to drop?");
     }
+
+    public void showHealth(int health){
+        System.out.println("You have " + health + " HP");
+    }
+
+    Health healthStatus(int health) {
+        if(health < 25)
+            return Health.CRITICAL_HEALTH;
+        if(health < 60 && health >= 25)
+            return Health.LOW_HEALTH;
+        if(health >= 60)
+            return Health.FULL_HEALTH;
+
+        System.out.println("You have " + health + " HP");
+        return null;
+    }
+
 }
