@@ -16,7 +16,8 @@ public class Enemy {
         this.health -= damage;
         if(damage > 0) {
             System.out.println("You hit " + name + " and did " + damage + " damage to him");
-            System.out.println(name + " now has " + health + " HP");
+            if (health >= 1)
+                System.out.println(name + " now has " + health + " HP");
         }
     }
 
