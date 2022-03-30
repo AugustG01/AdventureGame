@@ -85,6 +85,9 @@ public class Player {
         if (GameTest.gameOn) {
             System.out.println("Enemy attacks you and deals " + tmp + " damage");
             System.out.println("your current health is now " + health);
+            if(weapon instanceof RangedWeapon){
+                System.out.println("ammo left: " + ((RangedWeapon) weapon).getAmmunition());
+            }
         }
     }
 

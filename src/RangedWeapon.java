@@ -5,6 +5,9 @@ public class RangedWeapon extends Weapon{
         super(description, damage, criticalChance, missChance);
         this.ammunition = ammunition;
     }
+    public int getAmmunition(){
+        return ammunition;
+    }
 
     @Override
     public int attack() {
