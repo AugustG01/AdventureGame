@@ -78,15 +78,14 @@ public class Player {
     //enemy hits player, and checks if the player is dead, if not print current health
     public void hit(Enemy enemy){
         int tmp = enemy.attack();
-        if(tmp == 0) {
-
-            System.out.println("Enemy attacks you and deals " + tmp + " damage");
-            health -= tmp;
+        health -= tmp;
         checkIfDead();
-        }
+
         // if player is dead, checkIfDead sets GameOn to false
-        if (Controller.gameOn)
+        if (GameTest.gameOn) {
+            System.out.println("Enemy attacks you and deals " + tmp + " damage");
             System.out.println("your current health is now " + health);
+        }
     }
 
     //eat food, adds health to player
@@ -119,7 +118,7 @@ public class Player {
     public void checkIfDead(){
         if (health <= 0){
             System.out.println("You died");
-            Controller.gameOn = false;
+            GameTest.gameOn = false;
         }
     }
 
