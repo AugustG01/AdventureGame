@@ -12,7 +12,7 @@ public class RangedWeapon extends Weapon{
     @Override
     public int attack() {
         if(ammunition < 1){
-            System.out.println("You are out of ammo!");
+            System.out.println(ColorClass.RED + "You are out of ammo!" + ColorClass.RESET);
             return 0;
         }
         else {
