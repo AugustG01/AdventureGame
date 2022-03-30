@@ -19,6 +19,7 @@ public class Map {
     // melee
     Item axe = new MeleeWeapon("axe", 10, 10, 10);
     Item knife = new MeleeWeapon("knife", 5, 10, 10);
+    Item shovel = new MeleeWeapon("shovel", 3, 5, 6);
 
     //ranged
     Item bow = new RangedWeapon("bow", 3, 5, 5);
@@ -34,7 +35,8 @@ public class Map {
 
 
     // create enemies
-    Enemy dummy = new Enemy("john", "dangerous", knife, 50);
+    Enemy john = new Enemy("john", "dangerous", knife, 50);
+    Enemy zombieAlfred = new Enemy("Alfred the zombie", "slow and dead", shovel, 70);
 
     // create descriptions
     void gameSetup(){
@@ -97,8 +99,8 @@ public class Map {
         room5.itemsInRoom.setItem(anvil, corpse);
 
         // place enemies
-        room1.setEnemy(dummy);
-        room2.setEnemy(dummy);
+        room1.setEnemy(john);
+        room2.setEnemy(zombieAlfred);
 
 
         startRoom = room1;
