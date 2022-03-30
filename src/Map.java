@@ -21,8 +21,8 @@ public class Map {
     Item knife = new MeleeWeapon("knife", 5, 10, 10);
 
     //ranged
-    Item bow = new RangedWeapon("bow", 3, 5, 5);
-    Item throwDagger = new RangedWeapon("Throwing Dagger", 2, 5, 5);
+    Item bow = new RangedWeapon("bow", 3, 5, 5, 50);
+    Item throwDagger = new RangedWeapon("Throwing Dagger", 2, 5, 5, 50);
 
 
     // create food

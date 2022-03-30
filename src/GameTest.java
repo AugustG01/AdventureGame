@@ -1,4 +1,4 @@
-public class Controller {
+public class GameTest {
 
     public static boolean gameOn = true;
     Map map = new Map();
