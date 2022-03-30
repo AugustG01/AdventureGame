@@ -19,16 +19,17 @@ public class Map {
     // melee
     Item axe = new MeleeWeapon("Axe", 10, 50, 8);
     Item knife = new MeleeWeapon("Knife", 5, 10, 10);
-    Item shovel = new MeleeWeapon("Shovel", 4, 4, 5);
+    Item shovel = new MeleeWeapon("Shovel", 9, 3, 5);
     Item teeth = new MeleeWeapon("Rat teeth", 3,3,1);
     Item hoe = new MeleeWeapon("Hoe", 4, 7, 5);
     Item plunger = new MeleeWeapon("Plunger", 2, 2, 999);
-    Item magicWand = new MeleeWeapon("Magic wand", 15, 4, 15);
+    Item magicWand = new MeleeWeapon("Magic wand", 13, 4, 10);
+    Item flail = new MeleeWeapon("Flail", 10,3,3);
 
     //ranged
-    Item bow = new RangedWeapon("Bow", 12, 5, 2, 10);
+    Item bow = new RangedWeapon("Bow", 13, 5, 4, 10);
     Item throwDagger = new RangedWeapon("Throwing Dagger", 7, 5, 6, 5);
-    Item bazooka = new RangedWeapon("Bazooka", 50, 50, 1, 3);
+    Item bazooka = new RangedWeapon("Bazooka", 50, 50, 2, 6);
 
 
     // create food
@@ -41,18 +42,19 @@ public class Map {
     //healthy
     Item apple = new Food("Apple", 25);
     Item carrot = new Food("Carrot", 5);
-    Item bread = new Food("Bread", 5);
-    Item cucumber = new Food("Cucumber", 10);
+    Item bread = new Food("Bread", 20);
+    Item cucumber = new Food("Cucumber", 15);
     Item cookedMeat = new Food("Meat", 35);
     Item redPills = new Food("Red pills", 40);
 
 
     // create enemies
     Enemy dummy = new Enemy("John", "The dangerous", knife, 50);
-    Enemy zombie = new Enemy("Alfred", "The zombie", shovel, 70);
+    Enemy zombie = new Enemy("Alfred", "The zombie", shovel, 30);
     Enemy rat = new Enemy("Rat", "The evil", teeth, 2);
     Enemy undeadSoldier = new Enemy("Soldier with a bazooka", "Undead", bazooka, 20);
-    Enemy witch = new Enemy("Witch", " with a wooden stick", magicWand, 100);
+    Enemy witch = new Enemy("Witch", " with a wooden stick", magicWand, 80);
+    Enemy boss = new Enemy("BOSS", "sick",flail, 2);
 
 
     // create descriptions
@@ -116,11 +118,12 @@ public class Map {
         room9.itemsInRoom.setItem(bluePills, redPills, plunger);
 
         // place enemies
-        room5.setEnemy(dummy);
+        room5.setEnemy(boss);
         room3.setEnemy(rat);
         room4.setEnemy(zombie);
         room7.setEnemy(witch);
         room6.setEnemy(undeadSoldier);
+        room5.setEnemy(boss);
 
         startRoom = room1;
     }
@@ -128,3 +131,4 @@ public class Map {
         return startRoom;
     }
 }
+
