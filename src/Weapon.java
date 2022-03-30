@@ -30,7 +30,7 @@ public abstract class Weapon extends Item{
         int miss = random.nextInt(missChance);
         //System.out.println("miss random number: " + miss);
         if (miss == 0) {
-            System.out.println("Miss");
+            System.out.println(ColorClass.YELLOW + "Miss" + ColorClass.RESET);
             return true;
         }
         return false;
@@ -39,7 +39,7 @@ public abstract class Weapon extends Item{
         int crit = random.nextInt(criticalChance);
         //System.out.println("critical random number: " + crit);
         if (crit == 0) {
-            System.out.println("Critical");
+            System.out.println(ColorClass.RED + "Critical" + ColorClass.RESET);
             return damage * 2;
         }
         else
