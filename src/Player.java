@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Scanner;
 
 public class Player {
@@ -74,20 +75,21 @@ public class Player {
             if(enemy.getHealth() <= 0) {
                 killEnemy(enemy);
                 inCombat = false;
+                gameWin();
             }
             else hit(enemy);
         }
     }
-    //enemy hits player, and checks if the player is dead, if not print current health
+    //enemy hit's player, and checks if the player is dead, if not print current health
     public void hit(Enemy enemy){
-        int tmp = enemy.attack();
-        health -= tmp;
+        int enemyDamage = enemy.attack();
+        health -= enemyDamage;
         checkIfDead();
 
         // if player is dead, checkIfDead sets GameOn to false
         if (GameTest.gameOn) {
-            System.out.println("Enemy attacks you and deals " + tmp + " damage");
-            System.out.println("your current health is now " + health);
+            System.out.println("Enemy attacks you and deals " + ColorClass.ORANGE + enemyDamage + ColorClass.RESET + " damage");
+            System.out.println("Your current health is now " + ColorClass.RED + health+ ColorClass.RESET+" HP");
             if(weapon instanceof RangedWeapon){
                 System.out.println("ammo left: " + ((RangedWeapon) weapon).getAmmunition());
             }
@@ -99,7 +101,7 @@ public class Player {
         String foodItem = scan.nextLine();
         //Scanner for food item
         Item itemToEat = currentRoom.itemsInRoom.removeItems(foodItem);
-        //fjerner food item fra rummet
+        //removes food item from the room
         if(itemToEat == null){
             itemToEat = inventory.removeItems(foodItem);
             if(itemToEat == null){
@@ -161,13 +163,14 @@ public class Player {
             inventory.removeItems(item);
             ui.droppedItem(item);
         } else {
-            System.out.println("no such item exists");
+            System.out.println("No such item exists");
         }
     }
     //prints out the items in the currentRoom
-    void look() {
+    public void look() {
         System.out.println(currentRoom.getRoomDescription());
-        System.out.println("\nThere are some items in the room: \n" + currentRoom.itemsInRoom.printList());
+        if(currentRoom.itemsInRoom.itemList.size() != 0)
+            System.out.println("\nThere are some items in the room: \n" + currentRoom.itemsInRoom.printList());
         if (currentRoom.getEnemy() != null) {
             System.out.println("A creature is approaching. Be careful!");
             System.out.println(currentRoom.getEnemy().getName() + ", "
@@ -178,8 +181,14 @@ public class Player {
 
     }
 
+    public void gameWin() {
+        if (inventory.itemList.contains("")) {
+            System.out.println(ColorClass.GREEN + "You won the game!");
+            GameTest.gameOn = false;
+        }
+    }
 
-    void goNorth() {
+    public void goNorth() {
         if(!inCombat) {
             if (currentRoom.getNorth() != null) {
                 currentRoom = currentRoom.getNorth();
@@ -190,7 +199,7 @@ public class Player {
         } else ui.tryToFlee();
     }
 
-    void goSouth() {
+    public void goSouth() {
         if(!inCombat) {
             if (currentRoom.getSouth() != null) {
                 currentRoom = currentRoom.getSouth();
@@ -201,7 +210,7 @@ public class Player {
         } else ui.tryToFlee();
     }
 
-    void goEast() {
+    public void goEast() {
         if(!inCombat) {
             if (currentRoom.getEast() != null) {
                 currentRoom = currentRoom.getEast();
@@ -212,7 +221,7 @@ public class Player {
         } else ui.tryToFlee();
     }
 
-    void goWest() {
+    public void goWest() {
         if(!inCombat) {
             if (currentRoom.getWest() != null) {
                 currentRoom = currentRoom.getWest();
