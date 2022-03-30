@@ -5,11 +5,9 @@ public class UserInterface {
     String answer;
 
     public void intro() {
-        String name;
-        System.out.print("What is your name? ");
-        name = scan.nextLine();
-        System.out.println("Hi " + name + " and welcome to the");
-        System.out.println(ColorClass.RED + " ('-. .-.   ('-.                      .-') _  .-') _     ('-.  _ .-') _         ('-. .-.                            .-')      ('-.   \n" +
+
+        System.out.println("Hi and welcome to the");
+        System.out.println(" ('-. .-.   ('-.                      .-') _  .-') _     ('-.  _ .-') _         ('-. .-.                            .-')      ('-.   \n" +
                 "( OO )  /  ( OO ).-.                 ( OO ) )(  OO) )  _(  OO)( (  OO) )       ( OO )  /                           ( OO ).  _(  OO)  \n" +
                 ",--. ,--.  / . --. / ,--. ,--.   ,--./ ,--,' /     '._(,------.\\     .'_       ,--. ,--. .-'),-----.  ,--. ,--.   (_)---\\_)(,------. \n" +
                 "|  | |  |  | \\-.  \\  |  | |  |   |   \\ |  |\\ |'--...__)|  .---',`'--..._)      |  | |  |( OO'  .-.  ' |  | |  |   /    _ |  |  .---' \n" +
@@ -17,14 +15,17 @@ public class UserInterface {
                 "|       | \\| |_.'  | |  |_|( OO )|  .     |/    |  |  (|  '--. |  |   ' |      |       |\\_) |  |\\|  | |  |_|( OO ) '..`''.)(|  '--.  \n" +
                 "|  .-.  |  |  .-.  | |  | | `-' /|  |\\    |     |  |   |  .--' |  |   / :      |  .-.  |  \\ |  | |  | |  | | `-' /.-._)   \\ |  .--'  \n" +
                 "|  | |  |  |  | |  |('  '-'(_.-' |  | \\   |     |  |   |  `---.|  '--'  /      |  | |  |   `'  '-'  '('  '-'(_.-' \\       / |  `---. \n" +
-                "`--' `--'  `--' `--'  `-----'    `--'  `--'     `--'   `------'`-------'       `--' `--'     `-----'   `-----'     `-----'  `------' " + ColorClass.RESET);
+                "`--' `--'  `--' `--'  `-----'    `--'  `--'     `--'   `------'`-------'       `--' `--'     `-----'   `-----'     `-----'  `------' ");
     }
 
     public void newHealth(int healthPoints, int health) {
         if (healthPoints < 0) {
-            System.out.println("You ate POISON!. Your HP is reduced to " + health);
+            System.out.println(ColorClass.RED + "You ate POISON!. Your HP is reduced to " + health + ColorClass.RESET);
         } else
-            System.out.println("You increased you health by " + healthPoints + " Your HP is now " + health);
+            System.out.println(ColorClass.GREEN + "You increased your health by " + healthPoints + ". Your HP is now " + health + ColorClass.RESET);
+    }
+    public void tryToFlee(){
+        System.out.println(ColorClass.CYAN + "You cannot flee during combat!" + ColorClass.RESET);
     }
 
     public void help() {
@@ -64,7 +65,7 @@ public class UserInterface {
     }
 
     public void noItemFound() {
-        System.out.println("No item found");
+        System.out.println(ColorClass.ORANGE + "No item found" + ColorClass.RESET);
     }
 
     public void equipChoice() {
@@ -84,7 +85,7 @@ public class UserInterface {
     }
 
     public void showHealth(int health){
-        System.out.println("You have " + health + " HP");
+        System.out.println("You have " +ColorClass.RED + health + ColorClass.RESET + " HP");
     }
 
     Health healthStatus(int health) {
