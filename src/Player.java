@@ -1,3 +1,7 @@
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.awt.*;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Player {
@@ -7,6 +11,7 @@ public class Player {
     List inventory = new List();
     Scanner scan = new Scanner(System.in);
     Weapon weapon;
+    boolean inCombat = false;
 
     Player(int health){
         setHealth(health);
@@ -64,7 +69,8 @@ public class Player {
         currentRoom.setEnemy(null);
     }
     //player attacks the enemy
-    public void attack() {
+    public void attack() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        inCombat = true;
         if(attackPossible()) {
             inCombat = true;
             Enemy enemy = currentRoom.getEnemy();
@@ -72,20 +78,23 @@ public class Player {
             enemy.hit(weapon.attack());
             if(enemy.getHealth() <= 0) {
                 killEnemy(enemy);
+                inCombat = false;
+                gameWin();
             }
             else hit(enemy);
         }
     }
     //enemy hit's player, and checks if the player is dead, if not print current health
-    public void hit(Enemy enemy) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+
+    public void hit(Enemy enemy) throws UnsupportedAudioFileException, LineUnavailableException, IOException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         int enemyDamage = enemy.attack();
         health -= enemyDamage;
         checkIfDead();
 
         // if player is dead, checkIfDead sets GameOn to false
         if (GameTest.gameOn) {
-            System.out.println("Enemy attacks you and deals " + tmp + " damage");
-            System.out.println("your current health is now " + health);
+            System.out.println("Enemy attacks you and deals " + ColorClass.ORANGE + enemyDamage + ColorClass.RESET + " damage");
+            System.out.println("Your current health is now " + ColorClass.RED + health+ ColorClass.RESET+" HP");
             if(weapon instanceof RangedWeapon){
                 System.out.println("ammo left: " + ((RangedWeapon) weapon).getAmmunition());
             }
@@ -97,7 +106,7 @@ public class Player {
         String foodItem = scan.nextLine();
         //Scanner for food item
         Item itemToEat = currentRoom.itemsInRoom.removeItems(foodItem);
-        //fjerner food item fra rummet
+        //removes food item from the room
         if(itemToEat == null){
             itemToEat = inventory.removeItems(foodItem);
             if(itemToEat == null){
@@ -159,13 +168,14 @@ public class Player {
             inventory.removeItems(item);
             ui.droppedItem(item);
         } else {
-            System.out.println("no such item exists");
+            System.out.println("No such item exists");
         }
     }
     //prints out the items in the currentRoom
-    void look() {
+    public void look() {
         System.out.println(currentRoom.getRoomDescription());
-        System.out.println("\nThere are some items in the room: \n" + currentRoom.itemsInRoom.printList());
+        if(currentRoom.itemsInRoom.itemList.size() != 0)
+            System.out.println("\nThere are some items in the room: \n" + currentRoom.itemsInRoom.printList());
         if (currentRoom.getEnemy() != null) {
             System.out.println("A creature is approaching. Be careful!");
             System.out.println(currentRoom.getEnemy().getName() + ", "
@@ -176,40 +186,55 @@ public class Player {
 
     }
 
-    void goNorth() {
-        if (currentRoom.getNorth() != null) {
-            currentRoom = currentRoom.getNorth();
-            System.out.println("You go north");
-            System.out.println("Entering " + currentRoom.getName());
-            look();
-        } else ui.doesNotExist();
+    public void gameWin() {
+        if (inventory.itemList.contains("")) {
+            System.out.println(ColorClass.GREEN + "You won the game!");
+            GameTest.gameOn = false;
+        }
     }
 
-    void goSouth() {
-        if (currentRoom.getSouth() != null) {
-            currentRoom = currentRoom.getSouth();
-            System.out.println("You go south");
-            System.out.println("Entering " + currentRoom.getName());
-            look();
-        } else ui.doesNotExist();
+    public void goNorth() {
+        if(!inCombat) {
+            if (currentRoom.getNorth() != null) {
+                currentRoom = currentRoom.getNorth();
+                System.out.println("You go north");
+                System.out.println("Entering " + currentRoom.getName());
+                look();
+            } else ui.doesNotExist();
+        } else ui.tryToFlee();
     }
 
-    void goEast() {
-        if (currentRoom.getEast() != null) {
-            currentRoom = currentRoom.getEast();
-            System.out.println("You go east");
-            System.out.println("Entering " + currentRoom.getName());
-            look();
-        } else ui.doesNotExist();
+    public void goSouth() {
+        if(!inCombat) {
+            if (currentRoom.getSouth() != null) {
+                currentRoom = currentRoom.getSouth();
+                System.out.println("You go south");
+                System.out.println("Entering " + currentRoom.getName());
+                look();
+            } else ui.doesNotExist();
+        } else ui.tryToFlee();
     }
 
-    void goWest() {
-        if (currentRoom.getWest() != null) {
-            currentRoom = currentRoom.getWest();
-            System.out.println("You go west");
-            System.out.println("Entering " + currentRoom.getName());
-            look();
-        } else ui.doesNotExist();
+    public void goEast() {
+        if(!inCombat) {
+            if (currentRoom.getEast() != null) {
+                currentRoom = currentRoom.getEast();
+                System.out.println("You go east");
+                System.out.println("Entering " + currentRoom.getName());
+                look();
+            } else ui.doesNotExist();
+        } else ui.tryToFlee();
+    }
+
+    public void goWest() {
+        if(!inCombat) {
+            if (currentRoom.getWest() != null) {
+                currentRoom = currentRoom.getWest();
+                System.out.println("You go west");
+                System.out.println("Entering " + currentRoom.getName());
+                look();
+            } else ui.doesNotExist();
+        } else ui.tryToFlee();
     }
 
 }

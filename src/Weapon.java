@@ -21,6 +21,7 @@ public abstract class Weapon extends Item{
     public int getDamage() {
         return damage;
     }
+
     public int attack() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
 
         if(missChance())
