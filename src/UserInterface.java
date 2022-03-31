@@ -37,7 +37,8 @@ public class UserInterface {
                 Type "drop" to drop an item from your inventory
                 Type "exit" to exit the game
                 Type "attack" to attack the enemy
-                Type "equip" to equip a weapon""" + ColorClass.RESET);
+                Type "equip" to equip a weapon
+                Type "eat" to eat something in your inventory or in the room""" + ColorClass.RESET);
     }
 
     public void playerChoice() {

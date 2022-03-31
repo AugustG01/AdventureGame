@@ -35,7 +35,7 @@ public class Map {
     // create food
     //unhealthy
     Item rottenBeef = new Food("Rotten beef", -25);
-    Item poisonedCake = new Food("Cake", -60);
+    Item poisonedCake = new Food("Cake", -6);
     Item rottenApple = new Food("Apple", -30);
     Item bluePills = new Food("Blue pills", -20);
 
