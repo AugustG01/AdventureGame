@@ -17,12 +17,12 @@ public class UserInterface {
                 "|       | \\| |_.'  | |  |_|( OO )|  .     |/    |  |  (|  '--. |  |   ' |      |       |\\_) |  |\\|  | |  |_|( OO ) '..`''.)(|  '--.  \n" +
                 "|  .-.  |  |  .-.  | |  | | `-' /|  |\\    |     |  |   |  .--' |  |   / :      |  .-.  |  \\ |  | |  | |  | | `-' /.-._)   \\ |  .--'  \n" +
                 "|  | |  |  |  | |  |('  '-'(_.-' |  | \\   |     |  |   |  `---.|  '--'  /      |  | |  |   `'  '-'  '('  '-'(_.-' \\       / |  `---. \n" +
-                "`--' `--'  `--' `--'  `-----'    `--'  `--'     `--'   `------'`-------'       `--' `--'     `-----'   `-----'     `-----'  `------' " + ColorClass.RESET);
+                "`--' `--'  `--' `--'  `-----'    `--'  `--'     `--'   `------'`-------'       `--' `--'     `-----'   `-----'     `-----'  `------' ");
     }
 
     public void newHealth(int healthPoints, int health) {
         if (healthPoints < 0) {
-            System.out.println("You ate POISON!. Your HP is reduced to " + health);
+            System.out.println(ColorClass.RED + "You ate POISON!. Your HP is reduced to " + health + ColorClass.RESET);
         } else
             System.out.println("You increased you health by " + healthPoints + " Your HP is now " + health);
     }
@@ -64,7 +64,7 @@ public class UserInterface {
     }
 
     public void noItemFound() {
-        System.out.println("No item found");
+        System.out.println(ColorClass.ORANGE + "No item found" + ColorClass.RESET);
     }
 
     public void equipChoice() {

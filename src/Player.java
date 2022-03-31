@@ -66,6 +66,7 @@ public class Player {
     //player attacks the enemy
     public void attack() {
         if(attackPossible()) {
+            inCombat = true;
             Enemy enemy = currentRoom.getEnemy();
             //System.out.println("You are attacking with " + weapon.getDescription() + " and it does " + weapon.attack() + " damage");
             enemy.hit(weapon.attack());
@@ -75,10 +76,10 @@ public class Player {
             else hit(enemy);
         }
     }
-    //enemy hits player, and checks if the player is dead, if not print current health
-    public void hit(Enemy enemy){
-        int tmp = enemy.attack();
-        health -= tmp;
+    //enemy hit's player, and checks if the player is dead, if not print current health
+    public void hit(Enemy enemy) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        int enemyDamage = enemy.attack();
+        health -= enemyDamage;
         checkIfDead();
 
         // if player is dead, checkIfDead sets GameOn to false
@@ -132,9 +133,11 @@ public class Player {
         Item itemToAdd = currentRoom.itemsInRoom.removeItems(item);
         if (itemToAdd == null) {
             System.out.println("Oops, no such item exists!");
-        } else {
+        } else if (inventory.itemList.size() < 5){
             inventory.addItem(itemToAdd);
             ui.displayInventory(itemToAdd.getDescription());
+        } else {
+            System.out.println("Your inventory is full. Drop some items to make space for new ones");
         }
     }
 

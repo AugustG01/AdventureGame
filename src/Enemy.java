@@ -1,3 +1,7 @@
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 public class Enemy {
     private String name;
     private String description;
@@ -14,14 +18,14 @@ public class Enemy {
 
     public void hit(int damage) {
         health -= damage;
-        if(health > 0) {
-            System.out.println("You hit " + name + " and did " + damage + " damage to him");
+        if(health > 0 && damage > 0) {
+            System.out.println("You hit " + name + " and did " + ColorClass.ORANGE + damage + ColorClass.RESET + " damage");
             if (health >= 1)
                 System.out.println(name + " now has " + health + " HP");
         }
     }
 
-    public int attack() {
+    public int attack() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         return ((Weapon)weapon).attack();
     }
 

@@ -3,16 +3,16 @@ public class Map {
 
     //create Items
 
-    Item corpse = new Item("corpse");
-    Item chair = new Item("chair");
-    Item anvil = new Item("anvil");
-    Item lamp = new Item("lamp");
-    Item cheeseGrater = new Item("cheese grater");
-
-    Item candle = new Item("candle");
-
-
-
+    Item corpse = new Item("Corpse");
+    Item chair = new Item("Chair");
+    Item anvil = new Item("Anvil");
+    Item lamp = new Item("Lamp");
+    Item cheeseGrater = new Item("Cheese grater");
+    Item magicBeans = new Item("Magic beans");
+    Item dress = new Item("A red dress");
+    Item candle = new Item("Candle");
+    Item fireExtinguisher = new Item("Fire extinguisher");
+    Item carpet = new Item("Carpet");
 
 
     // create weapons
@@ -22,8 +22,9 @@ public class Map {
     Item shovel = new MeleeWeapon("shovel", 3, 6, 5);
 
     //ranged
-    Item bow = new RangedWeapon("bow", 3, 5, 5, 50);
-    Item throwDagger = new RangedWeapon("Throwing Dagger", 2, 5, 5, 50);
+    Item bow = new RangedWeapon("Bow", 13, 5, 4, 10);
+    Item throwDagger = new RangedWeapon("Throwing Dagger", 7, 5, 6, 5);
+    Item bazooka = new RangedWeapon("Bazooka", 50, 50, 2, 6);
 
 
     // create food
@@ -35,8 +36,13 @@ public class Map {
 
 
     // create enemies
-    Enemy dummy = new Enemy("john", "dangerous", knife, 50);
-    Enemy zombie = new Enemy("Alfred", "the zombie", shovel, 70);
+    Enemy dummy = new Enemy("John", "The dangerous", knife, 50);
+    Enemy zombie = new Enemy("Alfred", "The zombie", shovel, 30);
+    Enemy rat = new Enemy("Rat", "The evil", teeth, 2);
+    Enemy undeadSoldier = new Enemy("Soldier with a bazooka", "Undead", bazooka, 20);
+    Enemy witch = new Enemy("Witch", " with a wooden stick", magicWand, 80);
+    Enemy boss = new Enemy("BOSS", "sick",flail, 2);
+
 
     // create descriptions
     void gameSetup(){
@@ -59,15 +65,13 @@ public class Map {
                 There are no windows in this room.
                 The only light is a small candlelight in the southeastern corner.
                 A door to the south is ajar.""");
-        Room room7 = new Room("Bedroom","""
-                The room seems to be a bedroom but it's very dark.
+        Room room7 = new Room("The Bedroom","""
+                It's very dark and hard to see.
                 You can feel cobweb all over you and see a little reflection near the night stand.""");
-        Room room8 = new Room("Kitchen","""
-                You are in what seems to be the kitchen.
+        Room room8 = new Room("The Kitchen","""
                 It's very smokey and hard to see.
                 You can faintly see a staircase but can't put a finger on the which way to get to it.""");
-        Room room9 = new Room("Bathroom","""
-                Room 9 seems to be the bathroom.
+        Room room9 = new Room("The Bathroom","""
                 It's very cold since a small window is broken and banging against the outside bricks.
                 You see the medicine closet is slightly open.""");
 
@@ -92,16 +96,22 @@ public class Map {
         room4.setNorth(room1);
 
         // place items in map
-        room1.itemsInRoom.setItem(chair, axe, rottenBeef);
         room2.itemsInRoom.setItem(cheeseGrater, axe);
-        room3.itemsInRoom.setItem(knife, lamp, apple);
-        room4.itemsInRoom.setItem(bow, candle, throwDagger);
-        room5.itemsInRoom.setItem(anvil, corpse);
+        room3.itemsInRoom.setItem(lamp, apple, cookedMeat);
+        room4.itemsInRoom.setItem(bow, candle, bread);
+        room5.itemsInRoom.setItem(anvil, corpse, throwDagger);
+        room6.itemsInRoom.setItem(chair, rottenBeef, rottenApple);
+        room7.itemsInRoom.setItem(dress, cucumber, carpet);
+        room8.itemsInRoom.setItem(knife, fireExtinguisher, poisonedCake);
+        room9.itemsInRoom.setItem(bluePills, redPills, plunger);
 
         // place enemies
-        room1.setEnemy(dummy);
-        room2.setEnemy(zombie);
-
+        room5.setEnemy(boss);
+        room3.setEnemy(rat);
+        room4.setEnemy(zombie);
+        room7.setEnemy(witch);
+        room6.setEnemy(undeadSoldier);
+        room5.setEnemy(boss);
 
         startRoom = room1;
     }

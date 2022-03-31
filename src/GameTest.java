@@ -1,3 +1,7 @@
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 public class GameTest {
 
     public static boolean gameOn = true;
@@ -5,7 +9,7 @@ public class GameTest {
     Player player = new Player(100);
     UserInterface ui = new UserInterface();
 
-    void go() {
+    void go() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         map.gameSetup();
         player.currentRoom = map.getStartRoom();
         ui.intro();
@@ -14,7 +18,7 @@ public class GameTest {
             moveCommands();
         }
     }
-    void moveCommands() {
+    void moveCommands() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         switch (ui.answer) {
             case "help" -> ui.help();
             case "exit" -> {
