@@ -70,7 +70,6 @@ public class Player {
     }
     //player attacks the enemy
     public void attack() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        inCombat = true;
         if(attackPossible()) {
             inCombat = true;
             Enemy enemy = currentRoom.getEnemy();
