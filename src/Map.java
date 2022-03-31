@@ -35,7 +35,7 @@ public class Map {
     // create food
     //unhealthy
     Item rottenBeef = new Food("Rotten beef", -25);
-    Item poisonedCake = new Food("Cake", -60);
+    Item poisonedCake = new Food("Cake", -6);
     Item rottenApple = new Food("Apple", -30);
     Item bluePills = new Food("Blue pills", -20);
 
@@ -54,7 +54,7 @@ public class Map {
     Enemy rat = new Enemy("Rat", "The evil", teeth, 2);
     Enemy undeadSoldier = new Enemy("Soldier with a bazooka", "Undead", bazooka, 20);
     Enemy witch = new Enemy("Witch", " with a wooden stick", magicWand, 80);
-    Enemy boss = new Enemy("BOSS", "sick",flail, 2);
+    Enemy boss = new Enemy("BOSS", "sick",flail, 200);
 
 
     // create descriptions
