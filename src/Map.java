@@ -17,9 +17,14 @@ public class Map {
 
     // create weapons
     // melee
-    Item axe = new MeleeWeapon("axe", 10, 10, 10);
-    Item knife = new MeleeWeapon("knife", 5, 10, 10);
-    Item shovel = new MeleeWeapon("shovel", 3, 6, 5);
+    Item axe = new MeleeWeapon("Axe", 10, 50, 8);
+    Item knife = new MeleeWeapon("Knife", 5, 10, 10);
+    Item shovel = new MeleeWeapon("Shovel", 9, 3, 5);
+    Item teeth = new MeleeWeapon("Rat teeth", 3,3,1);
+    Item hoe = new MeleeWeapon("Hoe", 4, 7, 5);
+    Item plunger = new MeleeWeapon("Plunger", 2, 2, 999);
+    Item magicWand = new MeleeWeapon("Magic wand", 13, 4, 10);
+    Item flail = new MeleeWeapon("Flail", 10,3,3);
 
     //ranged
     Item bow = new RangedWeapon("Bow", 13, 5, 4, 10);
@@ -29,10 +34,18 @@ public class Map {
 
     // create food
     //unhealthy
-    Item rottenBeef = new Food("rotten beef", -25);
+    Item rottenBeef = new Food("Rotten beef", -25);
+    Item poisonedCake = new Food("Cake", -60);
+    Item rottenApple = new Food("Apple", -30);
+    Item bluePills = new Food("Blue pills", -20);
 
     //healthy
-    Item apple = new Food("apple", 25);
+    Item apple = new Food("Apple", 25);
+    Item carrot = new Food("Carrot", 5);
+    Item bread = new Food("Bread", 20);
+    Item cucumber = new Food("Cucumber", 15);
+    Item cookedMeat = new Food("Meat", 35);
+    Item redPills = new Food("Red pills", 40);
 
 
     // create enemies
@@ -48,19 +61,18 @@ public class Map {
     void gameSetup(){
         Room room1 = new Room("The Field", """
                 You stand in front of a decaying house, and spot two doors.""");
-        Room room2 = new Room("Main Entrance","""
-            You entered the main entrance, there is broken glass all over the ground,
+        Room room2 = new Room("The Main Entrance","""
+            There is broken glass all over the ground,
             among the shattered glass, are broken picture frames""");
-        Room room3 = new Room("Dining Room","""
-                You entered the dining room, there is a big old clock which is very loud,
+        Room room3 = new Room("The Dining Room","""
+                There is a big old clock which is very loud,
                 dining table has mold growing on it""");
-        Room room4 = new Room("Back entrance", """
+        Room room4 = new Room("The Back entrance", """
                 You are standing on a rotten carpet.
                 A bit of light enters through a broken window.
                 A sweet smell of decay comes from the the southern door""");
         Room room5 = new Room("The dungeon", """
-                All dark. You have no sense of direction.
-                Some heavy creature is breathing nearby. It seems to be coming your way.""");
+                All dark. You have no sense of direction.""");
         Room room6 = new Room("The Lounge", """
                 There are no windows in this room.
                 The only light is a small candlelight in the southeastern corner.
@@ -119,3 +131,4 @@ public class Map {
         return startRoom;
     }
 }
+
