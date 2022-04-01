@@ -1,4 +1,4 @@
-import java.util.Random;
+package Adventure;
 
 public class MeleeWeapon extends Weapon{
 

@@ -1,17 +1,24 @@
-   import java.util.ArrayList;
+package Adventure;
+
+import java.util.ArrayList;
     
     public class List {
         ArrayList<Item> itemList = new ArrayList<>();
     
         // removes item from list and returns that item
         public Item removeItems(String itemToBeRemoved) {
+
             for (int i = 0; i < itemList.size(); i++) {
                 Item tmp = itemList.get(i);
-                if (itemList.get(i).getDescription().equalsIgnoreCase(itemToBeRemoved)){
+                if ((itemList.get(i)!=null)&&itemList.get(i).getDescription().equalsIgnoreCase(itemToBeRemoved)){
                     itemList.remove(itemList.get(i));
                     return tmp;
                 }
-            } return null;
+                //System.out.println("t");
+                //else return null;
+            }
+
+            return null;
         }
         public void addItem(Item itemToBeAdded){
             itemList.add(itemToBeAdded);

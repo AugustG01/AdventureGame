@@ -1,3 +1,5 @@
+package Adventure;
+
 import java.util.Scanner;
 
 public class UserInterface {

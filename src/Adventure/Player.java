@@ -1,6 +1,7 @@
+package Adventure;
+
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import java.awt.*;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -42,7 +43,7 @@ public class Player {
                 inventory.addItem(weapon);
             }
             weapon = ((Weapon) weaponToEquip);
-            System.out.println("Weapon equipped");
+            System.out.println("Adventure.Weapon equipped");
         }
         else
             System.out.println(weaponToEquip.getDescription() + " is not a weapon");
@@ -63,7 +64,7 @@ public class Player {
     }
     //enemy killed, removed from room and weapon is given to player
     public void killEnemy(Enemy enemy){
-        System.out.println("Enemy died!");
+        System.out.println("Adventure.Enemy died!");
         inventory.addItem(enemy.drop());
         System.out.println("You picked up " + enemy.drop().getDescription());
         currentRoom.setEnemy(null);
@@ -92,7 +93,7 @@ public class Player {
 
         // if player is dead, checkIfDead sets GameOn to false
         if (GameTest.gameOn) {
-            System.out.println("Enemy attacks you and deals " + ColorClass.ORANGE + enemyDamage + ColorClass.RESET + " damage");
+            System.out.println("Adventure.Enemy attacks you and deals " + ColorClass.ORANGE + enemyDamage + ColorClass.RESET + " damage");
             System.out.println("Your current health is now " + ColorClass.RED + health+ ColorClass.RESET+" HP");
             if(weapon instanceof RangedWeapon){
                 System.out.println("ammo left: " + ((RangedWeapon) weapon).getAmmunition());

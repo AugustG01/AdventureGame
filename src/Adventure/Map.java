@@ -1,3 +1,5 @@
+package Adventure;
+
 public class Map {
     Room startRoom = new Room();
 
@@ -61,10 +63,10 @@ public class Map {
     void gameSetup(){
         Room room1 = new Room("The Field", """
                 You stand in front of a decaying house, and spot two doors.""");
-        Room room2 = new Room("The Main Entrance","""
+        Room room2 = new Room("The Adventure.Main Entrance","""
             There is broken glass all over the ground,
             among the shattered glass, are broken picture frames""");
-        Room room3 = new Room("The Dining Room","""
+        Room room3 = new Room("The Dining Adventure.Room","""
                 There is a big old clock which is very loud,
                 dining table has mold growing on it""");
         Room room4 = new Room("The Back entrance", """

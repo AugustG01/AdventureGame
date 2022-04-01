@@ -1,3 +1,5 @@
+package Adventure;
+
 public class ColorClass {
         // Reset
         public static final String RESET = "\033[0m";  // Text Reset
