@@ -37,13 +37,13 @@ public abstract class Weapon extends Item{
             System.out.println(ColorClass.YELLOW + "Miss" + ColorClass.RESET);
 
 
-            File swoosh = new File("swoosh.wav");
+           /* File swoosh = new File("swoosh.wav");
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(swoosh);
             Clip clip = AudioSystem.getClip();
             clip.open(audioStream);
 
             clip.start();
-
+           */
 
             return true;
         }
